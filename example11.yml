@@ -1,0 +1,9 @@
+---
+- name: my playbook
+  hosts: all
+  become: yes
+  tasks: 
+
+  - name: to install multiple users
+    user: 
+     name: ['raj', 'bhargav', 'sriram']

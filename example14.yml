@@ -1,0 +1,21 @@
+---
+- name: eror handling command use
+  hosts: all
+  become: yes
+  tasks: 
+
+  - name: installing git
+    yum: 
+     name: git
+     state: presentt
+    ignore_errors: yes
+
+  - name: installing docker
+    yum:
+     name: ['docker', 'git', 'mysql']
+     state: present
+
+  - name: installing httpd
+    yum:
+     name: httpd
+     state: removed

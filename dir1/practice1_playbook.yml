@@ -1,0 +1,7 @@
+---
+- name: this playbook to creat user
+  hosts: all
+  become: yes
+  tasks:
+  - name: creating JUNNU user
+    user: name=junnu

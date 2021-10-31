@@ -1,0 +1,11 @@
+---
+- name: variable
+  hosts: all
+  become: yes 
+
+  vars_files: varfile.yml
+ 
+  tasks: 
+  - name: creating user using variable
+    user:
+     name: "{{user}}"

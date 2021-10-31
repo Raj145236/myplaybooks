@@ -1,0 +1,10 @@
+---
+- name: my playbook
+  hosts: all
+  become: yes
+  task:
+  - name: uninstalling docker pkg
+     yum: 
+      name: docker
+      state: absent
+...    

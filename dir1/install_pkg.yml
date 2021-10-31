@@ -1,0 +1,13 @@
+---
+- name: to install or remove package
+  hosts: all
+  become: yes
+  tasks: 
+   - name: installing git package
+     yum: 
+      name: git
+      state: present
+   - name: removing git package
+     yum:
+      name: httpd
+      state: absent

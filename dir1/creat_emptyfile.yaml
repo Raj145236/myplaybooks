@@ -1,0 +1,22 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: to creat junnufile
+    file: 
+     path: /home/raj/saifile
+     state: touch
+  - name: to creat file
+    file:
+     name: saifile1        
+     path: /home/raj
+     state: touch
+  tasks:  
+  - name: to creat empty directory
+    file: 
+     path: /home/raj/dir3
+     state: directory
+    file: 
+     path: /home/raj/dir4
+     state: directory
+...

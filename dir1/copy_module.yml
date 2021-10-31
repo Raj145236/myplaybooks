@@ -1,0 +1,13 @@
+---
+- name: playbook modules
+  hosts: all
+  become: yes
+  tasks: 
+  - name: copying file
+    copy: 
+     src: /home/ansadmin/junnufile.txt
+     dest: /home/raj
+     owner: raj
+     group: raj
+     mode: 0644
+...  

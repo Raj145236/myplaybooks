@@ -1,0 +1,16 @@
+---
+# handlers file for role_example_fld
+- name: code for handlers
+  hosts: all
+  become: 
+  tasks: 
+   
+  - name: starting_httpd
+    service: 
+     name: httpd
+     state: started
+     
+  - name: staring_apache2
+    service:
+     name: apache2
+     state: started

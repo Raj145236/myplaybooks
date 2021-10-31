@@ -1,0 +1,22 @@
+---
+# tasks file for role_example_fldr 
+- name: installing httpd
+  yum:
+  name: httpd
+   state: installed
+  when: ansible_os_family == "RedHat"
+  notify: starting_httpd
+
+
+- name: installing apache2
+  apt:
+   name: apache2
+   state: present
+  when: ansible_os_family == "Debian"
+  notify: starting_apache2
+
+- name: copying index.html
+  copy:
+   name: index.html
+   src: /home/ansadmin/index.html
+   dest: /var/www/index.html

@@ -1,0 +1,21 @@
+---
+- name: my playbook
+  hosts: all
+  become: yes
+  
+  tasks: 
+  - name: instaling httpd pkg
+    yum: 
+     name: httpd
+     state: installed #installed/present/latest
+
+  - name: starting httpd service
+    service:
+     name: httpd
+     state: started    #started/restarted/reloaded
+
+  - name: installing docker package
+    yum:
+     name: docker
+     state: present
+...

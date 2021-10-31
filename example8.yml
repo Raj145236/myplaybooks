@@ -1,0 +1,16 @@
+---
+- name: my play book
+  hosts: all
+  become: yes
+  tasks: 
+  - name: installing httpd package
+    yum: 
+     name: httpd
+     state: installed
+    notify: service httpd
+  
+  handlers:
+  - name: service httpd
+    service: 
+     name: httpd
+     state: started
